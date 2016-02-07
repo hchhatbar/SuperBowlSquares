@@ -25,6 +25,18 @@ angular.module('MainCtrl', []).controller('MainController', function($scope,$htt
         $scope.message = 'Error fetching scores';
       });
 
+        $http
+      .get('/winner')
+      .success(function (data, status, headers, config) {
+        
+        console.log(data);
+        $scope.winner = data.winners;
 
+      })
+      .error(function (data, status, headers, config) {
+      	console.log('Error fetching winners');
+        
+        $scope.message = 'Error fetching winners';
+      });
     
 });

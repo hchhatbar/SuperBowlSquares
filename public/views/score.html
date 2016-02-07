@@ -1,11 +1,12 @@
 
 
-<div id="nist_container">
-	<div id="nist_centerCTNR">
+<div class="container">
+	
     Score
     
-    <div> 
-    <form data-ng-submit="submitScore()" id="score-form">   	
+  
+    <form data-ng-submit="submitScore()" id="score-form">   
+      <div class="form-group"> 	
     	<div>
           <label for="signin01">Broncos</label>
           <input type="text" id="signin01" name="name" data-ng-model="score.broncos_score" />
@@ -17,6 +18,8 @@
           <div >
             <button type="submit">Submit Scores</button>
         </div>	
+        </div>
         </form>
-    </div>
     
+ </div>   
+

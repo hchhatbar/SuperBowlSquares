@@ -104,7 +104,57 @@ Score.find().sort([['_id', -1]]).limit(1).select('broncos_score panthers_score  
 });
 });
 
+app.get('/winner', function (req, res) {
+    console.log('********Winner GET******');
+  console.log(req.body);  
+  Winner.find().sort([['_id', -1]]).limit(4).select('winnerNameQuarter  _id').exec(function(err, winners){
+  
+  if (err) throw err;
 
+    if (!winners) {
+      console.log('no winners');
+      res.json({ success: false, message: 'Winners not found.', winners:{} });
+    } else if (winners) {
+
+       //var winners = winners;
+
+        console.log('winners:' + winners);
+
+        // return the information including token as JSON
+        res.json({
+          success: true,
+          message: 'Enjoy your score!',
+          winners: winners
+        });
+      }   
+});
+});
+
+
+
+app.post('/winner', function (req, res) {
+    console.log('********Winner POST******');
+  console.log(req.body);  
+ 
+  // 
+    var winner = new Winner({
+    winnerNameQuarter: req.body.winnerNameQuarter
+    });
+  
+  winner.save(function(err) {
+  if (err) throw err;
+  else{
+  console.log('Winner saved successfully!');
+   // send the username password back for login
+      res.json({
+        score: winner,
+        message : 'Winner saved successfully'
+      });
+      }
+
+  });
+
+});
 
 
 

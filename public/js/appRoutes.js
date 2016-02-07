@@ -17,13 +17,13 @@
             templateUrl: 'views/score.html',
             controller: 'ScoreController'
         })
-            .when('/registration', {
-            templateUrl: 'views/registration.html',
-            controller: 'RegistrationController'
+            .when('/rules', {
+            templateUrl: 'views/rules.html',
+            controller: 'RulesController'
         })
-           .when('/assessment', {
-            templateUrl: 'views/assessment.html',
-            controller: 'AssessmentController'
+           .when('/winner', {
+            templateUrl: 'views/winner.html',
+            controller: 'WinnerController'
         })
 
 
