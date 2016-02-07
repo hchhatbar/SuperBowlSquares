@@ -15,7 +15,7 @@ var Winner   = require('./app/models/winner');
 // =======================
 // configuration =========
 // =======================
-var port = process.env.PORT || 8080; // used to create, sign, and verify tokens
+var port = process.env.PORT || 80; // used to create, sign, and verify tokens
 
 //'database': 'mongodb://localhost:27017/nistDB'
 //'mongodb://noder:noderauth&54;proximus.modulusmongo.net:27017/so9pojyN'
