@@ -72,7 +72,11 @@ app.post('/score', function (req, res) {
 
 app.get('/score', function (req, res) {
 console.log('get scores')
-Score.find({}, function(err, score) {
+Score.find().sort([['_id', -1]]).limit(1).select('broncos_score panthers_score  _id').exec(function(err, score){
+    //handle result
+  //  }
+//});
+//Score.find({}, function(err, score) {
   var defaultScore = {
     broncos_score: '0',
     panthers_score: '0'
