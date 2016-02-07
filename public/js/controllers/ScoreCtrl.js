@@ -11,27 +11,28 @@ angular.module('ScoreCtrl', []).controller('ScoreController', function($scope,$h
       .get('/score')
       .success(function (data, status, headers, config) {
         
-        console.log(data);
+        console.log(data.score[0].broncos_score);
         
-        $scope.score = data.score;
+        $scope.score = data.score[0];
       })
       .error(function (data, status, headers, config) {
         
         console.log('Error fetching scores');
-          var score = {
-              broncos_score: '0',
-              panthers_score: '0'
-          };
-        $scope.score = score;
+          //var score = {
+          //    broncos_score: '0',
+          //    panthers_score: '0'
+          //};
+        //$scope.score = score;
         $scope.message = 'Error fetching scores';
       });
 
 
-    $scope.score = function () {
-        console.log('calling login fn');
-        console.log($scope.user);
+    $scope.submitScore = function () {
+        console.log('calling submit score fn');
+        console.log($scope.score.broncos_score);
+                console.log($scope.score.panthers_score);
     $http
-      .post('/score', $scope.user)
+      .post('/score', $scope.score)
       .success(function (data, status, headers, config) {
         console.log(data);
        

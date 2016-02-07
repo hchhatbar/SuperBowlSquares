@@ -2,7 +2,7 @@
  // app/routes.js
 
 // grab the nerd model we just created
-//var User = require('./models/user');
+var Score = require('./models/score');
 
     module.exports = function(app) {
       app.get('*', function(req, res) {

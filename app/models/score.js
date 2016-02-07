@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 // set up a mongoose model and pass it using module.exports
 module.exports = mongoose.model('Score', new Schema({ 
-    broncos_score: Number,
-    panthers_score: Number
+    broncos_score: String,
+    panthers_score: String
     
 }));

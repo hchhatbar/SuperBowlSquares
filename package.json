@@ -1,9 +1,8 @@
-
 {
   "name": "superbowlsquares",
   "main": "server.js",
   "dependencies": {
-    "body-parser": "~1.4.2",
+    "body-parser": "^1.4.3",
     "ejs": "~0.8.5",
     "express": "~4.5.1",
     "method-override": "~1.0.0",
@@ -11,4 +10,3 @@
     "morgan": "~1.0.0"
   }
 }
-

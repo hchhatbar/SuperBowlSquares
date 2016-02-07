@@ -9,9 +9,10 @@ angular.module('MainCtrl', []).controller('MainController', function($scope,$htt
       .get('/score')
       .success(function (data, status, headers, config) {
         
-        console.log(data);
-        
-        cellId = data.score.broncos_score.toString() + data.score.panthers_score.toString() 
+        console.log(data.score[0].broncos_score);
+        console.log(data.score[0].panthers_score);
+        cellId = data.score[0].broncos_score + data.score[0].panthers_score;
+        console.log('cellId: ' + cellId);
         myEl = angular.element( document.getElementById(cellId) );
      	myEl.css('background-color', '#FFBF00');  
 
