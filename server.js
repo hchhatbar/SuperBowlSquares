@@ -43,8 +43,8 @@ app.use(morgan('dev'));
 
 app.get('/score', function (req, res) {
   var score = {
-    broncos_score: '8',
-    panthers_score: '0'
+    broncos_score: '7',
+    panthers_score: '9'
     };
 
 console.log(score);

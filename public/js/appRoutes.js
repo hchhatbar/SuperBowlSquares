@@ -13,9 +13,9 @@
             templateUrl: 'views/main.html',
             controller: 'MainController'
         })
-             .when('/login', {
-            templateUrl: 'views/login.html',
-            controller: 'LoginController'
+             .when('/score', {
+            templateUrl: 'views/score.html',
+            controller: 'ScoreController'
         })
             .when('/registration', {
             templateUrl: 'views/registration.html',

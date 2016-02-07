@@ -8,14 +8,12 @@ angular.module('MainCtrl', []).controller('MainController', function($scope,$htt
      $http
       .get('/score')
       .success(function (data, status, headers, config) {
-        console.log('*******');
-        console.log(data.score);
-        console.log(headers);
+        
         console.log(data);
-        console.log(config);
+        
         cellId = data.score.broncos_score.toString() + data.score.panthers_score.toString() 
         myEl = angular.element( document.getElementById(cellId) );
-     myEl.css('background-color', '#FFBF00');  
+     	myEl.css('background-color', '#FFBF00');  
 
       })
       .error(function (data, status, headers, config) {

@@ -1,6 +1,5 @@
 angular.module('slalomNISTApp', 
-['ngRoute', 'appRoutes', 'LoginCtrl', 'MainCtrl', 'AssessmentCtrl', 'RegistrationCtrl',
-	'NerdService',
+['ngRoute', 'appRoutes',  'MainCtrl', 'ScoreCtrl',
     'ngAnimate',
     'ngCookies',
     'ngResource',
