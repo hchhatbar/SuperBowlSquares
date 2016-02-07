@@ -15,13 +15,13 @@ var Winner   = require('./app/models/winner');
 // =======================
 // configuration =========
 // =======================
-var port = process.env.PORT || 80; // used to create, sign, and verify tokens
+var port = process.env.PORT || 8080; // used to create, sign, and verify tokens
 
 //'database': 'mongodb://localhost:27017/nistDB'
 //'mongodb://noder:noderauth&54;proximus.modulusmongo.net:27017/so9pojyN'
 
-mongoose.connect('mongodb://localhost:27017/superBowlSquaresDB'); // connect to database
-
+//mongoose.connect('mongodb://localhost:27017/superBowlSquaresDB'); // connect to database
+mongoose.connect('mongodb://svsb50:555hamilton@ds059135.mongolab.com:59135/heroku_hx73th6c'); // connect to database
 
 
 // use body parser so we can get info from POST and/or URL parameters
