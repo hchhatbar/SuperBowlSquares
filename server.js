@@ -42,18 +42,32 @@ app.use(morgan('dev'));
 
 
 app.get('/score', function (req, res) {
-  var score = {
-    broncos_score: '7',
-    panthers_score: '9'
-    };
 
-console.log(score);
-res.json({
+Score.find({}, function(err, score) {
+  var defaultScore = {
+    broncos_score: '0',
+    panthers_score: '0'
+    };
+    console.log(err);
+    if (err) throw err;
+
+    if (!score) {
+      console.log('no scores');
+      res.json({ success: false, message: 'Score not found.', score:defaultScore });
+    } else if (score) {
+
+       var score = score;
+
+        console.log(score);
+
+        // return the information including token as JSON
+        res.json({
           success: true,
           message: 'Enjoy your score!',
           score: score
         });
-
+      }   
+});
 });
 
 // routes ==================================================
